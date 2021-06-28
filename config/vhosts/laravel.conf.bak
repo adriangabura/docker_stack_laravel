@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+
+    ServerAdmin admin@example.com
+    ServerName achernar.lyr.ovh
+    DocumentRoot /var/www/html/public
+                                                                                                          
+    <Directory />
+            Options FollowSymLinks
+            AllowOverride None
+    </Directory>
+    <Directory /var/www/html>
+            AllowOverride All
+    </Directory>
+                                                                                                          
+<Directory "/var/www/html/public">
+    AllowOverride All
+    Require all granted
+</Directory>
+                                                                                                          
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+                                                                                                          
+</VirtualHost>                                                                            
